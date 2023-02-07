@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchAllProducts} from '../../redux/productsActions';
+// import {fetchAllProducts} from '../../redux/productsActions';
+import {fetchAllProductsThunk} from '../../redux/productsThunk';
 import ProductsComponent from './ProductsComponent';
 
 function ProductsContainer() {
@@ -9,9 +10,9 @@ function ProductsContainer() {
 
   console.log('Products', products);
   useEffect(() => {
-    dispatch(fetchAllProducts());
+    dispatch(fetchAllProductsThunk());
   }, []);
-  return <ProductsComponent />;
+  return <ProductsComponent products={products} />;
 }
 
 export default ProductsContainer;
