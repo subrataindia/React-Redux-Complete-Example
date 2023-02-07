@@ -11,7 +11,7 @@ function ProductsContainer() {
   useEffect(() => {
     dispatch(fetchAllProducts());
   }, []);
-  return <ProductsComponent />;
+  return <ProductsComponent products={products} />;
 }
 
 export default ProductsContainer;
